@@ -1,0 +1,31 @@
+-- A
+SELECT
+	s.Name
+FROM
+	Orders as o
+    INNER JOIN salesperson AS s on s.id = o.salesperson_id
+    INNER JOIN customer AS c ON c.id = o.cust_id
+WHERE
+	c.name = "Samsonic";
+-- B
+SELECT
+	s.Name
+FROM
+	Orders as o
+    INNER JOIN salesperson AS s on s.id = o.salesperson_id
+    INNER JOIN customer AS c ON c.id = o.cust_id
+WHERE
+
+	c.name != "Samsonic";
+-- C
+SELECT 
+	s.name
+FROM
+	orders AS o
+    INNER JOIN salesperson AS s ON s.id = o.Salesperson_id
+GROUP BY Salesperson_id
+HAVING count(*) > 1;
+
+--D
+INSERT INTO highaArchiver (Name, Age)
+SELECT	Name, Age FROM salesperson where salesperson.Salary >= 100000;
